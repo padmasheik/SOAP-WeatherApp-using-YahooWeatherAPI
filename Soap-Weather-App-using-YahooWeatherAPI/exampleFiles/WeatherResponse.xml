@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QueryResponse xmlns="http://padmacareer.com/weather"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://padmacareer.com/weather yahooweather.xsd">
+	<count>1</count>
+	<created>"2017-11-06T15:38:03Z"</created>
+	<lang>"en-US"</lang>
+	<results>
+		<channel>
+			<wind>
+				<chill>48</chill>
+				<direction>165</direction>
+				<speed>7</speed>
+			</wind>
+		</channel>
+	</results>
+</QueryResponse>

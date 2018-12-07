@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://padmacareer.com/weather" 
+xmlns:tns="http://padmacareer.com/weather" elementFormDefault="qualified">
+<xs:element name="GetWeatherDetailsRequest">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name ="city" type="xs:string"/>
+			<xs:element name="state" type="tns:state"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="GetNorthEastWeatherDetailsRequest">
+	<xs:complexType>
+	</xs:complexType>
+</xs:element>
+<xs:element name="GetWeatherDetailsResponse">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="weatherdetails" type="tns:weatherdetails"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:element name="GetNorthEastWeatherDetailsResponse">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="weatherdetails" type="tns:weatherdetails" maxOccurs="unbounded"/>
+			</xs:sequence>
+	</xs:complexType>
+</xs:element>
+<xs:complexType name="weatherdetails">
+<xs:sequence>
+			<xs:element name="count" type="xs:int"/>
+			<xs:element name="created" type="xs:string"/>
+			<xs:element name="lang" type="xs:string"/>
+			<xs:element name="results" type="tns:results"/>
+		</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="state">
+	<xs:restriction base ="xs:string">
+		<xs:minLength value="2"/>
+		<xs:maxLength value="2"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="results">
+	<xs:sequence>
+	<xs:element name="channel" type="tns:channel"/>
+	</xs:sequence>  
+</xs:complexType>
+<xs:complexType name="channel">
+	<xs:sequence>
+	<xs:element name="wind" type="tns:wind"/>
+	</xs:sequence>  
+</xs:complexType>
+ <xs:complexType name="wind">
+	<xs:sequence>
+		<xs:element name="chill" type="xs:int"/>
+		<xs:element name="direction" type="xs:int"/>
+		<xs:element name="speed" type="xs:int"/>
+	</xs:sequence>  
+</xs:complexType>
+ 
+</xs:schema>
+
+
+<!-- 
+GetWeatherDetails xmlns="http://padmacareer.com/weather">
+	<city>"jerseycity"</city>
+	<state>"nj"</state>
+</GetWeatherDetails>
+
+response:
+********
+<query xmlns="http://padmacareer.com/weather">
+	<count>1</count>
+	<created>"2017-11-06T15:38:03Z"</created>
+	<lang>"en-US"</lang>
+	<results>
+		<channel>
+			<wind>
+				<chill>48</chill>
+				<direction>165</direction>
+				<speed>7</speed>
+			</wind>
+		</channel>
+	</results>
+</query>
+ -->

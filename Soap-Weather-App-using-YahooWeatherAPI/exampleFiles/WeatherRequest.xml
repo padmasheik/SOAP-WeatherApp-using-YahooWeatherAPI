@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetWeatherDetailsRequest xmlns="http://padmacareer.com/weather" 
+xsi:schemaLocation="http://padmacareer.com/weather yahooweather.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<city>jerseycity</city>
+	<state>nj</state>
+</GetWeatherDetailsRequest>
